@@ -4,7 +4,7 @@ import {TextInput, Text, View, StyleSheet, TouchableOpacity, Alert} from "react-
 import {NavigationContainer} from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import FlatListScreen from './screens/screen2';
+import FlatListScreen from './screen2';
 
 const HomeScreen = () => {
   const [text, setText] = useState('');
@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
         fontWeight:'500',
         textAlign: 'center',
     },
+   
     textInput: {
         minHeight: 200,
         minWidth: 80,
