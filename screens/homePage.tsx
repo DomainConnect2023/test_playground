@@ -1,12 +1,10 @@
 import * as React from 'react';
 import {useState} from "react";
 import {TextInput, Text, View, StyleSheet, TouchableOpacity, Alert} from "react-native";
-import {NavigationContainer} from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import FlatListScreen from './screen2';
+// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-const HomeScreen = () => {
+
+export default function HomeScreen(){
   const [text, setText] = useState('');
 
 const handlePress = () => {
@@ -31,33 +29,37 @@ const handlePress = () => {
   );
 };
 
-const Tab = createBottomTabNavigator();
+// const Tab = createBottomTabNavigator();
 
-export default function App() {
-    return(
-        <NavigationContainer>
-        <Tab.Navigator
-        screenOptions={({route}) => ({
-            tabBarIcon: ({focused, color, size}) => {
-                let iconName;
-                if(route.name === 'Home'){
-                    iconName = focused ? "home" : "home-outline";
-                }else if(route.name ==='List'){
-                    iconName = focused ? 'list' : 'list-outline';
-                }
-                return <Ionicons name={iconName ?? ""} size={size} color={color}/>;
-            },
-            tabBarStyle: styles.tabBar,
-            tabBarActiveTintColor: 'black',
-            tabBarInactiveTintColor: 'grey',
-            tabBarLabelStyle: styles.tabLabel,
-        })}>
-            <Tab.Screen name="Home" component={HomeScreen}/>
-            <Tab.Screen name="List" component={FlatListScreen}/>
-        </Tab.Navigator>
-        </NavigationContainer>
-    );
-};
+// export default function App() {
+//     return(
+//         <NavigationContainer>
+//         <Tab.Navigator
+//         screenOptions={({route}) => ({
+//             tabBarIcon: ({focused, color, size}) => {
+//                 let iconName;
+//                 if(route.name === 'Home'){
+//                     iconName = focused ? "home" : "home-outline";
+//                 }else if(route.name ==='List'){
+//                     iconName = focused ? 'list' : 'list-outline';
+//                 }
+//                 else if(route.name === 'DataDisplay'){
+//                     iconName = focused ?'analytics' : 'analytics-outline';
+//                 }
+//                 return <Ionicons name={iconName ?? ""} size={size} color={color}/>;
+//             },
+//             tabBarStyle: styles.tabBar,
+//             tabBarActiveTintColor: 'black',
+//             tabBarInactiveTintColor: 'grey',
+//             tabBarLabelStyle: styles.tabLabel,
+//         })}>
+//             <Tab.Screen name="Home" component={HomeScreen}/>
+//             <Tab.Screen name="List" component={FlatListScreen}/>
+//             <Tab.Screen name="DataDisplay" component={DataDisplay}/>
+//         </Tab.Navigator>
+//         </NavigationContainer>
+//     );
+// };
 
 const styles = StyleSheet.create({
     topBarContainer: {
